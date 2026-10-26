@@ -74,6 +74,23 @@
     document.querySelectorAll(".legal__block").forEach((s) => spy.observe(s));
   }
 
+  // Cookie-Hinweis: nur Information. Gemerkt wird lediglich das "Verstanden"
+  // im localStorage (technisch erforderlich, § 25 Abs. 2 Nr. 2 TDDDG), ohne Übermittlung.
+  const notice = document.querySelector(".notice-bar");
+  const KEY = "sbh-notice-ok";
+  let seen = false;
+  try { seen = localStorage.getItem(KEY) === "1"; } catch (_) {}
+  if (notice && !seen) {
+    notice.hidden = false;
+    document.body.classList.add("has-notice");
+    notice.querySelector(".notice-bar__btn").addEventListener("click", () => {
+      try { localStorage.setItem(KEY, "1"); } catch (_) {}
+      notice.classList.add("is-leaving");
+      document.body.classList.remove("has-notice");
+      setTimeout(() => { notice.hidden = true; }, 350);
+    });
+  }
+
   // Kachel-Spotlight: Mausposition als CSS-Variablen
   document.querySelectorAll(".tile").forEach((t) => {
     t.addEventListener("pointermove", (e) => {

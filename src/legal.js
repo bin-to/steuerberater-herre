@@ -5,9 +5,9 @@ const { site, icon } = c;
 
 const stand = "Oktober 2026";
 const docs = {
-  agb: "assets/docs/AGBs.pdf",
-  mandanten: "assets/docs/Pflichtinformationen_gem.-DS_GVO_Mandanten-1.pdf",
-  bewerber: "assets/docs/09_Pflichtinformationen_gem.-DS_GVO_Mitarbeiter_Bewerber-1.pdf",
+  agb: "{{root}}assets/docs/AGBs.pdf",
+  mandanten: "{{root}}assets/docs/Pflichtinformationen_gem.-DS_GVO_Mandanten-1.pdf",
+  bewerber: "{{root}}assets/docs/09_Pflichtinformationen_gem.-DS_GVO_Mitarbeiter_Bewerber-1.pdf",
 };
 
 const slug = (s) =>
@@ -52,7 +52,7 @@ const docBox = `<div class="legal__docs">
 /* ------------------------------------------------------------------ Impressum */
 
 const impressum = {
-  file: "impressum.html",
+  file: "impressum",
   active: "",
   title: "Impressum | steuerberaterherre",
   description: "Impressum von steuerberaterherre – Stefanie Herre, Steuerberaterin, Esslinger Str. 26, 73776 Altbach.",
@@ -86,7 +86,7 @@ ${legalPage({
           <dt>Versicherungssumme</dt><dd>1.000.000 EUR je Versicherungsfall, Jahreshöchstleistung 4.000.000 EUR</dd>
         </dl>`],
     ["Vergütung", `<p>Die Vergütung für Steuerberatungsleistungen richtet sich grundsätzlich nach der Steuerberatervergütungsverordnung (StBVV). Die Gebühren hängen überwiegend vom Gegenstandswert und damit von den Umständen des Einzelfalls ab (§ 11 StBVV), sodass sich keine festen Preise im Voraus nennen lassen. Abweichende Vereinbarungen in Textform sind im Rahmen der StBVV möglich. Gerne erstellen wir Ihnen vorab eine unverbindliche Kosteneinschätzung.</p>`],
-    ["Allgemeine Geschäftsbedingungen", `<p>Für unsere Aufträge gelten unsere <a href="agb.html">Allgemeinen Geschäftsbedingungen</a>, soweit nichts anderes in Textform vereinbart ist.</p>`],
+    ["Allgemeine Geschäftsbedingungen", `<p>Für unsere Aufträge gelten unsere <a href="{{root}}agb/">Allgemeinen Geschäftsbedingungen</a>, soweit nichts anderes in Textform vereinbart ist.</p>`],
     ["Verbraucherstreitbeilegung", `<p>Wir sind nicht bereit und nicht verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen (§ 36 VSBG).</p>`],
     ["Haftung für Inhalte", `<p>Die Inhalte dieser Website wurden mit größter Sorgfalt erstellt. Sie dienen der allgemeinen Information und ersetzen keine individuelle steuerliche Beratung. Für Richtigkeit, Vollständigkeit und Aktualität übernehmen wir keine Gewähr. Als Diensteanbieterin sind wir für eigene Inhalte nach den allgemeinen Gesetzen verantwortlich. Eine Pflicht, übermittelte oder gespeicherte fremde Informationen zu überwachen, besteht nicht.</p>`],
     ["Haftung für Links", `<p>Diese Website enthält Links zu Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Für diese Inhalte ist stets der jeweilige Anbieter verantwortlich. Zum Zeitpunkt der Verlinkung waren keine Rechtsverstöße erkennbar. Werden uns Rechtsverletzungen bekannt, entfernen wir die betreffenden Links umgehend.</p>`],
@@ -99,7 +99,7 @@ ${legalPage({
 /* -------------------------------------------------------------- Datenschutz */
 
 const datenschutz = {
-  file: "datenschutz.html",
+  file: "datenschutz",
   active: "",
   title: "Datenschutzerklärung | steuerberaterherre",
   description: "Datenschutzerklärung von steuerberaterherre: welche Daten wir beim Besuch dieser Website verarbeiten und welche Rechte Sie haben.",
@@ -131,7 +131,8 @@ ${legalPage({
         </ul>
         <p>Die Verarbeitung ist erforderlich, um die Website auszuliefern und ihre Sicherheit und Stabilität zu gewährleisten. Rechtsgrundlage ist unser berechtigtes Interesse nach Art. 6 Abs. 1 lit. f DSGVO. Die Logfiles werden nach spätestens 14 Tagen gelöscht, sofern sie nicht zur Aufklärung eines konkreten Sicherheitsvorfalls länger benötigt werden. Eine Zusammenführung mit anderen Datenquellen findet nicht statt.</p>`],
     ["TLS-Verschlüsselung", `<p>Aus Sicherheitsgründen nutzt diese Website eine TLS-Verschlüsselung. Eine verschlüsselte Verbindung erkennen Sie an „https://“ und dem Schloss-Symbol in der Adresszeile Ihres Browsers.</p>`],
-    ["Cookies und Tracking", `<p>Diese Website setzt <strong>keine Cookies</strong> und speichert keine Informationen auf Ihrem Endgerät. Wir verwenden keine Analyse-, Tracking- oder Werbedienste und erstellen keine Nutzungsprofile. Eine Einwilligung nach § 25 TDDDG ist daher nicht erforderlich, ein Cookie-Banner entfällt.</p>`],
+    ["Cookies und Tracking", `<p>Diese Website setzt <strong>keine Cookies</strong>. Wir verwenden keine Analyse-, Tracking- oder Werbedienste und erstellen keine Nutzungsprofile.</p>
+        <p>Einzige Ausnahme: Wenn Sie den Hinweis „Keine Cookies, kein Tracking“ mit „Verstanden“ schließen, wird dies im lokalen Speicher Ihres Browsers (localStorage) vermerkt, damit der Hinweis nicht bei jedem Seitenaufruf erneut erscheint. Der Eintrag enthält keine personenbezogenen Daten, wird nicht an uns oder Dritte übermittelt und ist für diese von Ihnen gewünschte Funktion unbedingt erforderlich (§ 25 Abs. 2 Nr. 2 TDDDG). Eine Einwilligung ist daher nicht nötig. Sie können den Eintrag jederzeit über die Einstellungen Ihres Browsers löschen.</p>`],
     ["Schriftarten", `<p>Die verwendeten Schriftarten (Titillium Web, Allura) sind lokal auf unserem Server gespeichert. Beim Seitenaufruf wird keine Verbindung zu Servern von Google oder anderen Drittanbietern hergestellt.</p>`],
     ["Kontaktaufnahme", `<p>Wenn Sie uns per E-Mail, Telefon oder Telefax kontaktieren, verarbeiten wir Ihre Angaben (z. B. Name, Kontaktdaten, Inhalt Ihrer Anfrage), um Ihr Anliegen zu bearbeiten. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO, soweit Ihre Anfrage mit einem Vertrag oder vorvertraglichen Maßnahmen zusammenhängt, im Übrigen unser berechtigtes Interesse an der Beantwortung nach Art. 6 Abs. 1 lit. f DSGVO.</p>
         <p>Wir löschen die Daten, sobald sie nicht mehr erforderlich sind und keine gesetzlichen Aufbewahrungspflichten (z. B. nach § 66 StBerG, § 147 AO, § 257 HGB) entgegenstehen. Als Berufsgeheimnisträger unterliegen wir der gesetzlichen Verschwiegenheitspflicht (§ 57 StBerG, § 203 StGB).</p>`],
@@ -177,7 +178,7 @@ const agbPoints = [
 ];
 
 const agb = {
-  file: "agb.html",
+  file: "agb",
   active: "",
   title: "Allgemeine Geschäftsbedingungen | steuerberaterherre",
   description: "Allgemeine Geschäftsbedingungen (AGB) von steuerberaterherre – Überblick und verbindliche Fassung als PDF.",

@@ -5,7 +5,7 @@ const { site, icon, img } = c;
 const desc = "steuerberaterherre in Altbach – Ihre Steuerkanzlei für Privatpersonen und Unternehmen. Zuverlässig. Familiär. Unkompliziert.";
 
 const home = {
-  file: "index.html",
+  file: "",
   active: "home",
   title: "steuerberaterherre – Steuerberater in Altbach | Zuverlässig. Familiär. Unkompliziert.",
   description: desc,
@@ -41,7 +41,7 @@ ${c.contact()}`,
 };
 
 const kanzlei = {
-  file: "kanzlei.html",
+  file: "kanzlei",
   active: "kanzlei",
   title: "Kanzlei & Team | steuerberaterherre Altbach",
   description: "Lernen Sie das Team von steuerberaterherre kennen: Stefanie und Ralph Herre und ihr familiäres Team in Altbach.",
@@ -60,7 +60,7 @@ ${c.cta()}`,
 };
 
 const privat = {
-  file: "privat.html",
+  file: "privat",
   active: "privat",
   title: "Steuerberatung für Privatpersonen | steuerberaterherre Altbach",
   description: "Wir lassen Sie nicht im Regen stehen: umfassende Steuerberatung für Privatpersonen in Altbach und Umgebung.",
@@ -97,7 +97,7 @@ ${c.contact()}`,
 };
 
 const unternehmen = {
-  file: "unternehmen.html",
+  file: "unternehmen",
   active: "unternehmen",
   title: "Steuerberatung für Unternehmen – Digitale Kanzlei | steuerberaterherre",
   description: "Digital, modern und doch sehr persönlich: Steuerberatung und Digitalisierung für Unternehmen. Ausgezeichnet als DATEV Digitale Kanzlei.",
@@ -137,7 +137,7 @@ ${c.contact()}`,
 };
 
 const karriere = {
-  file: "karriere.html",
+  file: "karriere",
   active: "karriere",
   title: "Karriere – Jobs bei steuerberaterherre in Altbach",
   description: "Lust auf Veränderung? Moderner Arbeitsplatz, tolles Team, flexible Arbeitszeiten. Jetzt bei steuerberaterherre bewerben.",

@@ -14,15 +14,15 @@ Statische Website (HTML/CSS/JS, kein Framework). Alle Seiten nutzen dasselbe Tem
 ## Befehle
 
 ```bash
-node build.js   # erzeugt die *.html im Hauptordner neu
+node build.js   # erzeugt alle Seiten neu (/, /kanzlei/, /privat/ …)
 node serve.js   # Vorschau unter http://localhost:5173
 ```
 
-Texte und Inhalte in `src/` ändern, dann `node build.js` ausführen. Zum Hosten reichen die `*.html`-Dateien und `assets/`.
+Texte und Inhalte in `src/` ändern, dann `node build.js` ausführen. Zum Hosten den Ordner ohne `src/`, `_src/` und die JS-Hilfsdateien hochladen. Jede Seite liegt als `index.html` in einem eigenen Ordner (saubere URLs ohne `.html`). Die `.htaccess` leitet auf Apache alte `.html`-Links und `/index.html` um und erzwingt HTTPS.
 
 ## Vor dem Livegang
 
 - Datenschutzerklärung einsetzen und anpassen (Platzhalter in `src/pages.js`)
 - Haftungs-/Urheberrechtsabschnitte im Impressum ergänzen
 - Leistungslisten auf Privat/Unternehmen inhaltlich prüfen
-- Google Fonts ggf. lokal einbinden (DSGVO)
+- Hosting-Anbieter in der Datenschutzerklärung eintragen

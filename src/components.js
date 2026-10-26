@@ -14,11 +14,11 @@ const site = {
 };
 
 const nav = [
-  { href: "index.html", label: "Start", key: "home" },
-  { href: "privat.html", label: "Privat", key: "privat" },
-  { href: "unternehmen.html", label: "Unternehmen", key: "unternehmen" },
-  { href: "kanzlei.html", label: "Kanzlei", key: "kanzlei" },
-  { href: "karriere.html", label: "Karriere", key: "karriere" },
+  { href: "{{root}}", label: "Start", key: "home" },
+  { href: "{{root}}privat/", label: "Privat", key: "privat" },
+  { href: "{{root}}unternehmen/", label: "Unternehmen", key: "unternehmen" },
+  { href: "{{root}}kanzlei/", label: "Kanzlei", key: "kanzlei" },
+  { href: "{{root}}karriere/", label: "Karriere", key: "karriere" },
 ];
 
 const seals = [
@@ -29,7 +29,7 @@ const seals = [
   { src: "DATEV_Label_Digitale_Kanzlei_2025_RGB.png", year: 2025 },
 ];
 
-const img = (file) => `assets/img/${file}`;
+const img = (file) => `{{root}}assets/img/${file}`;
 
 const icon = {
   arrow: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>`,
@@ -57,12 +57,12 @@ function head({ title, description }) {
 <meta name="theme-color" content="#1b1c1a">
 <meta property="og:title" content="${title}">
 <meta property="og:description" content="${description}">
-<meta property="og:image" content="assets/img/0N5A2675-scaled.jpg">
-<link rel="icon" href="assets/img/favicon.png" type="image/png">
-<link rel="apple-touch-icon" href="assets/img/favicon.png">
-<link rel="preload" href="assets/fonts/titillium-web-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="assets/fonts/titillium-web-700.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/css/style.css">
+<meta property="og:image" content="{{root}}assets/img/0N5A2675-scaled.jpg">
+<link rel="icon" href="{{root}}assets/img/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="{{root}}assets/img/favicon.png">
+<link rel="preload" href="{{root}}assets/fonts/titillium-web-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{root}}assets/fonts/titillium-web-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="{{root}}assets/css/style.css">
 <script>document.documentElement.classList.add("js")</script>
 </head>`;
 }
@@ -80,13 +80,13 @@ function header(active) {
 </div>
 <header class="header">
   <div class="wrap">
-    <a class="logo" href="index.html" aria-label="steuerberaterherre – zur Startseite">
+    <a class="logo" href="{{root}}" aria-label="steuerberaterherre – zur Startseite">
       <img src="${img("Steuerberaterherre_Logo.png")}" alt="steuerberaterherre" width="300" height="32">
     </a>
     <button class="burger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="nav"><span></span></button>
     <nav class="nav" id="nav" aria-label="Hauptnavigation">
         ${links}
-        <a class="btn" href="index.html#kontakt">Kontakt ${icon.arrow}</a>
+        <a class="btn" href="{{root}}#kontakt">Kontakt ${icon.arrow}</a>
     </nav>
   </div>
   <span class="progress" aria-hidden="true"></span>
@@ -123,11 +123,11 @@ function footer() {
       <div>
         <h4>Rechtliches</h4>
         <ul>
-          <li><a href="impressum.html">Impressum</a></li>
-          <li><a href="datenschutz.html">Datenschutz</a></li>
-          <li><a href="agb.html">AGB</a></li>
-          <li><a href="assets/docs/Pflichtinformationen_gem.-DS_GVO_Mandanten-1.pdf" target="_blank" rel="noopener">DSGVO-Infos Mandanten (PDF)</a></li>
-          <li><a href="assets/docs/09_Pflichtinformationen_gem.-DS_GVO_Mitarbeiter_Bewerber-1.pdf" target="_blank" rel="noopener">DSGVO-Infos Bewerber (PDF)</a></li>
+          <li><a href="{{root}}impressum/">Impressum</a></li>
+          <li><a href="{{root}}datenschutz/">Datenschutz</a></li>
+          <li><a href="{{root}}agb/">AGB</a></li>
+          <li><a href="{{root}}assets/docs/Pflichtinformationen_gem.-DS_GVO_Mandanten-1.pdf" target="_blank" rel="noopener">DSGVO-Infos Mandanten (PDF)</a></li>
+          <li><a href="{{root}}assets/docs/09_Pflichtinformationen_gem.-DS_GVO_Mitarbeiter_Bewerber-1.pdf" target="_blank" rel="noopener">DSGVO-Infos Bewerber (PDF)</a></li>
         </ul>
       </div>
       <div class="footer__seal">
@@ -137,20 +137,25 @@ function footer() {
     <div class="footer__bottom">
       <span>© ${year} Stefanie Herre · steuerberaterherre<span class="footer__credit"> · Made by <a href="https://bin-to.de" target="_blank" rel="noopener">bin-to</a></span></span>
       <nav class="footer__legal" aria-label="Rechtliches">
-        <a href="impressum.html">Impressum</a>
-        <a href="datenschutz.html">Datenschutz</a>
-        <a href="agb.html">AGB</a>
+        <a href="{{root}}impressum/">Impressum</a>
+        <a href="{{root}}datenschutz/">Datenschutz</a>
+        <a href="{{root}}agb/">AGB</a>
       </nav>
     </div>
   </div>
 </footer>
 <button class="to-top" aria-label="Nach oben">${icon.up}</button>
+<aside class="notice-bar" role="region" aria-label="Hinweis zu Cookies" hidden>
+  <span class="notice-bar__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6z"/><path d="m9 12 2 2 4-4"/></svg></span>
+  <p><strong>Keine Cookies, kein Tracking.</strong> Diese Website verwendet keine Cookies und keine Analyse-Tools. <a href="{{root}}datenschutz/#cookies-und-tracking">Mehr erfahren</a></p>
+  <button class="notice-bar__btn">Verstanden</button>
+</aside>
 <dialog class="lightbox" aria-label="Bildansicht">
   <button class="lightbox__close" aria-label="Schließen">×</button>
   <img src="" alt="">
   <p class="lightbox__cap"></p>
 </dialog>
-<script src="assets/js/main.js" defer></script>
+<script src="{{root}}assets/js/main.js" defer></script>
 </body>
 </html>`;
 }
@@ -174,7 +179,7 @@ function pageHero({ image, eyebrow, title, lead, crumb, plain }) {
   return `<section class="page-hero${plain ? " page-hero--plain" : ""}">
   ${image ? `<div class="page-hero__media"><img src="${img(image)}" alt="" fetchpriority="high"></div>` : ""}
   <div class="wrap">
-    <nav class="crumbs" aria-label="Brotkrumen"><a href="index.html">Start</a><span aria-hidden="true">/</span><span>${crumb}</span></nav>
+    <nav class="crumbs" aria-label="Brotkrumen"><a href="{{root}}">Start</a><span aria-hidden="true">/</span><span>${crumb}</span></nav>
     ${eyebrow ? `<p class="eyebrow">${eyebrow}</p>` : ""}
     <h1>${title}</h1>
     ${lead ? `<p class="lead">${lead}</p>` : ""}
@@ -191,28 +196,28 @@ function services() {
       <p class="lead">Ob Einkommensteuererklärung, Lohnbuchhaltung oder Jahresabschluss – wir kümmern uns, Sie haben den Kopf frei.</p>
     </div>
     <div class="bento">
-      <a class="tile tile--a" href="privat.html" data-reveal>
+      <a class="tile tile--a" href="{{root}}privat/" data-reveal>
         <div class="tile__bg"><img src="${img("privat.jpg")}" alt="" loading="lazy"></div>
         <img class="tile__icon" src="${img("Icons_herre-01.png")}" alt="" width="64" height="64">
         <h3>Privat</h3>
         <p>Von der kleinsten Maus bis zum dicksten Elefanten – wir lassen niemanden im Regen stehen.</p>
         <span class="tile__more">Mehr erfahren ${icon.arrow}</span>
       </a>
-      <a class="tile tile--b" href="unternehmen.html" data-reveal style="--d:.1s">
+      <a class="tile tile--b" href="{{root}}unternehmen/" data-reveal style="--d:.1s">
         <div class="tile__bg"><img src="${img("Unternehmen.jpg")}" alt="" loading="lazy"></div>
         <img class="tile__icon" src="${img("Icons_herre-02.png")}" alt="" width="64" height="64">
         <h3>Unternehmen</h3>
         <p>Digital, modern und trotzdem persönlich – maßgeschneidert für Ihren Betrieb.</p>
         <span class="tile__more">Mehr erfahren ${icon.arrow}</span>
       </a>
-      <a class="tile tile--c" href="kanzlei.html" data-reveal>
+      <a class="tile tile--c" href="{{root}}kanzlei/" data-reveal>
         <div class="tile__bg"><img src="${img("Slider_Kanzlei_V3-1.jpg")}" alt="" loading="lazy" style="object-position:50% 40%"></div>
         <img class="tile__icon" src="${img("Icons_herre-04.png")}" alt="" width="64" height="64">
         <h3>Kanzlei</h3>
         <p>Lernen Sie uns kennen: ein junges, familiäres Team mit Erfahrung aus der Finanzverwaltung.</p>
         <span class="tile__more">Team &amp; Räume ${icon.arrow}</span>
       </a>
-      <a class="tile tile--d" href="karriere.html" data-reveal style="--d:.1s">
+      <a class="tile tile--d" href="{{root}}karriere/" data-reveal style="--d:.1s">
         <div class="tile__bg"><img src="${img("Karriere.jpg")}" alt="" loading="lazy"></div>
         <img class="tile__icon" src="${img("Icons_herre-03.png")}" alt="" width="64" height="64">
         <h3>Karriere</h3>
@@ -264,7 +269,7 @@ function about({ withLink = true } = {}) {
         <li>Fachberater Gesundheitswesen (IBG/HS Bremerhaven)</li>
         <li>Seit 2021 jedes Jahr als DATEV Digitale Kanzlei ausgezeichnet</li>
       </ul>
-      ${withLink ? `<a class="link-arrow" href="kanzlei.html">Mehr über die Kanzlei ${icon.arrow}</a>` : ""}
+      ${withLink ? `<a class="link-arrow" href="{{root}}kanzlei/">Mehr über die Kanzlei ${icon.arrow}</a>` : ""}
     </div>
   </div>
 </section>`;
@@ -372,7 +377,7 @@ function privateBanner() {
         <p class="eyebrow">Für Privatpersonen</p>
         <h2>Von der kleinsten Maus bis zum dicksten Elefanten.</h2>
         <p>Wir lassen niemanden im Regen stehen und betreuen Sie umfassend in allen privaten Steuerangelegenheiten.</p>
-        <div class="btn-row"><a class="btn" href="privat.html">Leistungen für Privat ${icon.arrow}</a></div>
+        <div class="btn-row"><a class="btn" href="{{root}}privat/">Leistungen für Privat ${icon.arrow}</a></div>
       </div>
     </div>
   </div>

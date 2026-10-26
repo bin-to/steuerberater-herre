@@ -12,6 +12,8 @@ const types = {
 
 http.createServer((req, res) => {
   let p = decodeURIComponent(req.url.split("?")[0]);
+  // /kanzlei → /kanzlei/ (wie ein normaler Webserver)
+  if (!path.extname(p) && !p.endsWith("/")) return res.writeHead(301, { Location: p + "/" }).end();
   if (p.endsWith("/")) p += "index.html";
   const file = path.join(root, path.normalize(p));
   if (!file.startsWith(root)) return res.writeHead(403).end();

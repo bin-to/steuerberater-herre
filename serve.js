@@ -18,7 +18,8 @@ http.createServer((req, res) => {
   const file = path.join(root, path.normalize(p));
   if (!file.startsWith(root)) return res.writeHead(403).end();
   fs.readFile(file, (err, data) => {
-    if (err) return res.writeHead(404).end("Not found");
+    // Wie GitHub Pages: unbekannte Adressen bekommen die 404-Seite
+    if (err) return fs.readFile(path.join(root, "404.html"), (e, page) => res.writeHead(404, { "Content-Type": types[".html"] }).end(e ? "Not found" : page));
     res.writeHead(200, { "Content-Type": types[path.extname(file)] || "application/octet-stream" });
     res.end(data);
   });

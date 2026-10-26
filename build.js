@@ -4,8 +4,15 @@
 // Aufruf: node build.js
 const fs = require("fs");
 const path = require("path");
+const crypto = require("crypto");
 const c = require("./src/components");
 const pages = require("./src/pages");
+
+// Cache-Busting: CSS/JS bekommen eine Versionsnummer aus ihrem Inhalt (?v=…),
+// damit Browser nach einem Update nie die alte Datei aus dem Cache nehmen.
+const version = (file) => crypto.createHash("md5").update(fs.readFileSync(path.join(__dirname, file))).digest("hex").slice(0, 8);
+const assets = ["assets/css/style.css", "assets/js/main.js"].map((f) => [f, `${f}?v=${version(f)}`]);
+const bust = (html) => assets.reduce((h, [f, v]) => h.replaceAll(`${f}"`, `${v}"`), html);
 
 // Alte Ausgaben im Hauptordner (*.html, außer index.html) entfernen – werden unten neu erzeugt
 for (const f of fs.readdirSync(__dirname)) {
@@ -16,7 +23,7 @@ for (const page of pages) {
   const dir = path.join(__dirname, page.file);
   const root = page.file ? "../" : "./";
   fs.mkdirSync(dir, { recursive: true });
-  const html = c.layout(page).replaceAll("{{root}}", root);
+  const html = bust(c.layout(page).replaceAll("{{root}}", root));
   fs.writeFileSync(path.join(dir, "index.html"), html, "utf8");
   console.log("✓", "/" + (page.file ? page.file + "/" : ""));
 }
@@ -76,5 +83,5 @@ const notFound = c.layout({
   })();
 </script>`
   );
-fs.writeFileSync(path.join(__dirname, "404.html"), notFound, "utf8");
+fs.writeFileSync(path.join(__dirname, "404.html"), bust(notFound), "utf8");
 console.log("✓", "/404.html");

@@ -317,38 +317,50 @@ const vitas = {
   },
 };
 
+// Kennzahlen je Person, abgeleitet aus dem Werdegang
+vitas.sh.stats = [["2002", "Steuerberaterexamen"], ["6 Jahre", "Betriebsprüferin"], ["seit 2007", "Dozentin StBK Stuttgart"]];
+vitas.rh.stats = [["2002", "Steuerberaterexamen"], ["4 Jahre", "Betriebsprüfer"], ["seit 2010", "Referent DATEV eG"]];
+vitas.sh.tags = ["Kanzleileitung"];
+vitas.rh.tags = ["Kanzleileitung", "Fachberater Gesundheitswesen"];
+
 function team() {
-  const card = (id, v, i) => `<article class="person" data-reveal style="--d:${i * 0.1}s">
-        <div class="person__img"><img src="${img(v.photo)}" alt="${v.name}" loading="lazy"></div>
-        <div>
-          <h3>${v.name}</h3>
-          <p class="person__role">${v.role}</p>
-          <p class="person__sub">${v.sub}</p>
-          <button class="person__btn" aria-expanded="false" aria-controls="vita-${id}">Werdegang ansehen ${icon.chevron}</button>
+  const card = (id, v, i) => `<article class="profile" data-reveal style="--d:${i * 0.12}s">
+        <div class="profile__head">
+          <figure class="profile__photo"><img src="${img(v.photo)}" alt="Porträt ${v.name}" loading="lazy"></figure>
+          <div class="profile__info">
+            <ul class="profile__tags">${v.tags.map((t) => `<li>${t}</li>`).join("")}</ul>
+            <h3>${v.name}</h3>
+            <p class="profile__role">${v.role}</p>
+          </div>
+        </div>
+        <dl class="profile__stats">
+          ${v.stats.map(([val, label]) => `<div><dt>${label}</dt><dd>${val}</dd></div>`).join("\n          ")}
+        </dl>
+        <button class="profile__toggle" aria-expanded="false" aria-controls="vita-${id}">
+          <span>Werdegang</span><span class="profile__plus" aria-hidden="true"></span>
+        </button>
+        <div class="profile__vita" id="vita-${id}">
+          <div class="profile__vita-inner">
+            <ol class="timeline">
+              ${v.steps.map(([t, d]) => `<li><time>${t}</time><span>${d}</span></li>`).join("\n              ")}
+            </ol>
+            <button class="profile__graphic" data-lightbox="${img(v.image)}" data-caption="Werdegang ${v.name}">Werdegang als Grafik ansehen ${icon.arrow}</button>
+          </div>
         </div>
       </article>`;
-  const vita = (id, v) => `<div class="vita" id="vita-${id}">
-      <div class="vita__head">
-        <h3>Werdegang <span>${v.name}</span></h3>
-        <button class="btn btn--ghost" data-lightbox="${img(v.image)}" data-caption="Zeitstrahl ${v.name}">Als Grafik ansehen</button>
-      </div>
-      <ol class="timeline">
-        ${v.steps.map(([t, d]) => `<li><time>${t}</time><span>${d}</span></li>`).join("\n        ")}
-      </ol>
-    </div>`;
   return `<section class="section dark chalk--mark chalk" id="team">
   <div class="wrap">
-    <div class="section-head" data-reveal>
-      <p class="eyebrow">Kanzleileitung</p>
-      <h2>Die Köpfe hinter <span class="hl">steuerberaterherre</span>.</h2>
-      <p class="lead">Beide haben jahrelang auf der anderen Seite des Schreibtischs gesessen – in Veranlagung und Betriebsprüfung. Davon profitieren Sie heute.</p>
+    <div class="team-head">
+      <div class="section-head" data-reveal>
+        <p class="eyebrow">Kanzleileitung</p>
+        <h2>Die Köpfe hinter <span class="hl">steuerberaterherre</span>.</h2>
+      </div>
+      <p class="lead" data-reveal style="--d:.08s">Beide haben jahrelang auf der anderen Seite des Schreibtischs gesessen – in Veranlagung und Betriebsprüfung. Davon profitieren Sie heute.</p>
     </div>
     <div class="team">
       ${card("sh", vitas.sh, 0)}
       ${card("rh", vitas.rh, 1)}
     </div>
-    ${vita("sh", vitas.sh)}
-    ${vita("rh", vitas.rh)}
   </div>
 </section>`;
 }

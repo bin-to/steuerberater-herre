@@ -27,20 +27,12 @@
     items.forEach((el) => el.classList.add("is-in"));
   }
 
-  // Vita aufklappen (immer nur eine offen)
-  document.querySelectorAll(".person__btn").forEach((btn) => {
+  // Werdegang in der Profilkarte auf-/zuklappen (Animation per CSS)
+  document.querySelectorAll(".profile__toggle").forEach((btn) => {
     btn.addEventListener("click", () => {
-      const target = document.getElementById(btn.getAttribute("aria-controls"));
       const open = btn.getAttribute("aria-expanded") !== "true";
-      document.querySelectorAll(".person__btn").forEach((b) => {
-        b.setAttribute("aria-expanded", "false");
-        document.getElementById(b.getAttribute("aria-controls"))?.classList.remove("is-open");
-      });
-      if (open) {
-        btn.setAttribute("aria-expanded", "true");
-        target.classList.add("is-open");
-        target.scrollIntoView({ behavior: "smooth", block: "nearest" });
-      }
+      btn.setAttribute("aria-expanded", String(open));
+      btn.closest(".profile").classList.toggle("is-open", open);
     });
   });
 

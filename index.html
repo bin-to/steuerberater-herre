@@ -144,67 +144,85 @@
 </section>
 <section class="section dark chalk--mark chalk" id="team">
   <div class="wrap">
-    <div class="section-head" data-reveal>
-      <p class="eyebrow">Kanzleileitung</p>
-      <h2>Die Köpfe hinter <span class="hl">steuerberaterherre</span>.</h2>
-      <p class="lead">Beide haben jahrelang auf der anderen Seite des Schreibtischs gesessen – in Veranlagung und Betriebsprüfung. Davon profitieren Sie heute.</p>
+    <div class="team-head">
+      <div class="section-head" data-reveal>
+        <p class="eyebrow">Kanzleileitung</p>
+        <h2>Die Köpfe hinter <span class="hl">steuerberaterherre</span>.</h2>
+      </div>
+      <p class="lead" data-reveal style="--d:.08s">Beide haben jahrelang auf der anderen Seite des Schreibtischs gesessen – in Veranlagung und Betriebsprüfung. Davon profitieren Sie heute.</p>
     </div>
     <div class="team">
-      <article class="person" data-reveal style="--d:0s">
-        <div class="person__img"><img src="./assets/img/SteffiHerre.jpg" alt="Stefanie Herre" loading="lazy"></div>
-        <div>
-          <h3>Stefanie Herre</h3>
-          <p class="person__role">Steuerberaterin / Dipl.-Finanzwirtin (FH)</p>
-          <p class="person__sub">Kanzleileitung</p>
-          <button class="person__btn" aria-expanded="false" aria-controls="vita-sh">Werdegang ansehen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+      <article class="profile" data-reveal style="--d:0s">
+        <div class="profile__head">
+          <figure class="profile__photo"><img src="./assets/img/SteffiHerre.jpg" alt="Porträt Stefanie Herre" loading="lazy"></figure>
+          <div class="profile__info">
+            <ul class="profile__tags"><li>Kanzleileitung</li></ul>
+            <h3>Stefanie Herre</h3>
+            <p class="profile__role">Steuerberaterin / Dipl.-Finanzwirtin (FH)</p>
+          </div>
+        </div>
+        <dl class="profile__stats">
+          <div><dt>Steuerberaterexamen</dt><dd>2002</dd></div>
+          <div><dt>Betriebsprüferin</dt><dd>6 Jahre</dd></div>
+          <div><dt>Dozentin StBK Stuttgart</dt><dd>seit 2007</dd></div>
+        </dl>
+        <button class="profile__toggle" aria-expanded="false" aria-controls="vita-sh">
+          <span>Werdegang</span><span class="profile__plus" aria-hidden="true"></span>
+        </button>
+        <div class="profile__vita" id="vita-sh">
+          <div class="profile__vita-inner">
+            <ol class="timeline">
+              <li><time>1995 – 1998</time><span>Studium an der Fachhochschule Ludwigsburg, Hochschule für Finanzen</span></li>
+              <li><time>10/1998</time><span>Abschluss: Dipl.-Finanzwirtin (FH)</span></li>
+              <li><time>ab 10/1998</time><span>Sachbearbeiterin beim Finanzamt Esslingen</span></li>
+              <li><time>1999 – 3/2005</time><span>Betriebsprüferin beim Finanzamt Esslingen</span></li>
+              <li><time>04/2002</time><span>Abschluss: Steuerberaterexamen</span></li>
+              <li><time>bis 12/2004</time><span>Dozentin und Mitglied des Prüfungsausschusses der IHK Ludwigsburg für Buchführung/Bilanzierung der Bilanzbuchhaltung</span></li>
+              <li><time>ab 04/2005</time><span>Selbständige Steuerberaterin</span></li>
+              <li><time>06/2005</time><span>Gründung HERRE & PARTNER StBG</span></li>
+              <li><time>ab 2007</time><span>Dozentin der Steuerberaterkammer Stuttgart und Mitglied des Prüfungsausschusses für Fortbildungsprüfungen zum Steuerfachwirt/in</span></li>
+              <li><time>2018</time><span>Aus HERRE & PARTNER StBG wird steuerberaterherre</span></li>
+            </ol>
+            <button class="profile__graphic" data-lightbox="./assets/img/Zeitstrahl_vita_SH-scaled.jpg" data-caption="Werdegang Stefanie Herre">Werdegang als Grafik ansehen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+          </div>
         </div>
       </article>
-      <article class="person" data-reveal style="--d:0.1s">
-        <div class="person__img"><img src="./assets/img/RalphHerre.jpg" alt="Ralph Herre" loading="lazy"></div>
-        <div>
-          <h3>Ralph Herre</h3>
-          <p class="person__role">Steuerberater / Dipl.-Finanzwirt (FH)</p>
-          <p class="person__sub">Kanzleileitung · Fachberater Gesundheitswesen (IBG/HS Bremerhaven)</p>
-          <button class="person__btn" aria-expanded="false" aria-controls="vita-rh">Werdegang ansehen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+      <article class="profile" data-reveal style="--d:0.12s">
+        <div class="profile__head">
+          <figure class="profile__photo"><img src="./assets/img/RalphHerre.jpg" alt="Porträt Ralph Herre" loading="lazy"></figure>
+          <div class="profile__info">
+            <ul class="profile__tags"><li>Kanzleileitung</li><li>Fachberater Gesundheitswesen</li></ul>
+            <h3>Ralph Herre</h3>
+            <p class="profile__role">Steuerberater / Dipl.-Finanzwirt (FH)</p>
+          </div>
+        </div>
+        <dl class="profile__stats">
+          <div><dt>Steuerberaterexamen</dt><dd>2002</dd></div>
+          <div><dt>Betriebsprüfer</dt><dd>4 Jahre</dd></div>
+          <div><dt>Referent DATEV eG</dt><dd>seit 2010</dd></div>
+        </dl>
+        <button class="profile__toggle" aria-expanded="false" aria-controls="vita-rh">
+          <span>Werdegang</span><span class="profile__plus" aria-hidden="true"></span>
+        </button>
+        <div class="profile__vita" id="vita-rh">
+          <div class="profile__vita-inner">
+            <ol class="timeline">
+              <li><time>1993 – 1996</time><span>Studium an der Fachhochschule Ludwigsburg, Hochschule für Finanzen</span></li>
+              <li><time>10/1996</time><span>Abschluss: Dipl.-Finanzwirt (FH)</span></li>
+              <li><time>1996 – 1997</time><span>Sachbearbeiter Veranlagung beim Finanzamt Donaueschingen und beim Finanzamt Karlsruhe-Durlach</span></li>
+              <li><time>01/1998 – 05/2002</time><span>Betriebsprüfer bei der BP-Hauptstelle des Finanzamts Stuttgart I</span></li>
+              <li><time>02/2002</time><span>Abschluss: Steuerberaterexamen</span></li>
+              <li><time>06/2002 – 12/2002</time><span>Angestellter Steuerberater</span></li>
+              <li><time>05/2005</time><span>Selbständiger Steuerberater</span></li>
+              <li><time>06/2005</time><span>Gründung HERRE & PARTNER StBG</span></li>
+              <li><time>seit 2010</time><span>Referent für die DATEV eG</span></li>
+              <li><time>seit 2012</time><span>Mitglied der Vertreterversammlung der DATEV eG</span></li>
+              <li><time>2018</time><span>Aus HERRE & PARTNER StBG wird steuerberaterherre</span></li>
+            </ol>
+            <button class="profile__graphic" data-lightbox="./assets/img/Zeitstrahl_vita_RH-scaled.jpg" data-caption="Werdegang Ralph Herre">Werdegang als Grafik ansehen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+          </div>
         </div>
       </article>
-    </div>
-    <div class="vita" id="vita-sh">
-      <div class="vita__head">
-        <h3>Werdegang <span>Stefanie Herre</span></h3>
-        <button class="btn btn--ghost" data-lightbox="./assets/img/Zeitstrahl_vita_SH-scaled.jpg" data-caption="Zeitstrahl Stefanie Herre">Als Grafik ansehen</button>
-      </div>
-      <ol class="timeline">
-        <li><time>1995 – 1998</time><span>Studium an der Fachhochschule Ludwigsburg, Hochschule für Finanzen</span></li>
-        <li><time>10/1998</time><span>Abschluss: Dipl.-Finanzwirtin (FH)</span></li>
-        <li><time>ab 10/1998</time><span>Sachbearbeiterin beim Finanzamt Esslingen</span></li>
-        <li><time>1999 – 3/2005</time><span>Betriebsprüferin beim Finanzamt Esslingen</span></li>
-        <li><time>04/2002</time><span>Abschluss: Steuerberaterexamen</span></li>
-        <li><time>bis 12/2004</time><span>Dozentin und Mitglied des Prüfungsausschusses der IHK Ludwigsburg für Buchführung/Bilanzierung der Bilanzbuchhaltung</span></li>
-        <li><time>ab 04/2005</time><span>Selbständige Steuerberaterin</span></li>
-        <li><time>06/2005</time><span>Gründung HERRE & PARTNER StBG</span></li>
-        <li><time>ab 2007</time><span>Dozentin der Steuerberaterkammer Stuttgart und Mitglied des Prüfungsausschusses für Fortbildungsprüfungen zum Steuerfachwirt/in</span></li>
-        <li><time>2018</time><span>Aus HERRE & PARTNER StBG wird steuerberaterherre</span></li>
-      </ol>
-    </div>
-    <div class="vita" id="vita-rh">
-      <div class="vita__head">
-        <h3>Werdegang <span>Ralph Herre</span></h3>
-        <button class="btn btn--ghost" data-lightbox="./assets/img/Zeitstrahl_vita_RH-scaled.jpg" data-caption="Zeitstrahl Ralph Herre">Als Grafik ansehen</button>
-      </div>
-      <ol class="timeline">
-        <li><time>1993 – 1996</time><span>Studium an der Fachhochschule Ludwigsburg, Hochschule für Finanzen</span></li>
-        <li><time>10/1996</time><span>Abschluss: Dipl.-Finanzwirt (FH)</span></li>
-        <li><time>1996 – 1997</time><span>Sachbearbeiter Veranlagung beim Finanzamt Donaueschingen und beim Finanzamt Karlsruhe-Durlach</span></li>
-        <li><time>01/1998 – 05/2002</time><span>Betriebsprüfer bei der BP-Hauptstelle des Finanzamts Stuttgart I</span></li>
-        <li><time>02/2002</time><span>Abschluss: Steuerberaterexamen</span></li>
-        <li><time>06/2002 – 12/2002</time><span>Angestellter Steuerberater</span></li>
-        <li><time>05/2005</time><span>Selbständiger Steuerberater</span></li>
-        <li><time>06/2005</time><span>Gründung HERRE & PARTNER StBG</span></li>
-        <li><time>seit 2010</time><span>Referent für die DATEV eG</span></li>
-        <li><time>seit 2012</time><span>Mitglied der Vertreterversammlung der DATEV eG</span></li>
-        <li><time>2018</time><span>Aus HERRE & PARTNER StBG wird steuerberaterherre</span></li>
-      </ol>
     </div>
   </div>
 </section>

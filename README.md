@@ -25,3 +25,4 @@ Texte und Inhalte in `src/` ändern, dann `node build.js` ausführen. Zum Hosten
 - Impressum, Datenschutz und AGB rechtlich prüfen lassen
 - Leistungslisten auf Privat/Unternehmen inhaltlich prüfen
 - Hosting-Anbieter in der Datenschutzerklärung eintragen
+- `noindex` abschalten: in `src/components.js` `site.noindex` auf `false` setzen und `node build.js` ausführen

@@ -2,6 +2,8 @@
 // Jede Seite in src/pages.js setzt sich aus diesen Funktionen zusammen.
 
 const site = {
+  // Vorschau-Phase: Suchmaschinen sollen die Seite nicht aufnehmen. Vor dem Livegang auf false setzen.
+  noindex: true,
   name: "steuerberaterherre",
   phone: "07153 9 22 69-0",
   phoneHref: "tel:+4971539226900",
@@ -55,6 +57,7 @@ function head({ title, description }) {
 <title>${title}</title>
 <meta name="description" content="${description}">
 <meta name="theme-color" content="#1b1c1a">
+${site.noindex ? `<meta name="robots" content="noindex, nofollow, noarchive">` : ""}
 <meta property="og:title" content="${title}">
 <meta property="og:description" content="${description}">
 <meta property="og:image" content="{{root}}assets/img/0N5A2675-scaled.jpg">

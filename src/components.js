@@ -134,7 +134,7 @@ function footer() {
       </div>
     </div>
     <div class="footer__bottom">
-      <span>© ${year} Stefanie Herre · steuerberaterherre</span>
+      <span>© ${year} Stefanie Herre · steuerberaterherre<span class="footer__credit"> · Made by <a href="https://bin-to.de" target="_blank" rel="noopener">bin-to</a></span></span>
       <nav class="footer__legal" aria-label="Rechtliches">
         <a href="impressum.html">Impressum</a>
         <a href="datenschutz.html">Datenschutz</a>

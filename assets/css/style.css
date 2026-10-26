@@ -518,6 +518,8 @@ a.contact-card:hover { border-color: var(--lime); transform: translateX(6px); ba
 .footer__seals { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; margin-top: 22px; max-width: 320px; }
 .footer__seals img { width: 100%; background: var(--white); border-radius: 10px; padding: 4px; }
 .footer__bottom { border-top: 1px solid rgba(255, 255, 255, .08); padding-block: 22px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 24px; font-size: .88rem; }
+.footer__credit { color: rgba(255, 255, 255, .38); }
+.footer__credit a { color: rgba(255, 255, 255, .5); }
 .footer__legal { display: flex; flex-wrap: wrap; gap: 8px 20px; }
 @media (max-width: 1100px) { .footer__grid { grid-template-columns: 1fr 1fr 1fr; } .footer__brand { grid-column: 1 / -1; } .footer__seal { display: none; } }
 @media (max-width: 640px) { .footer__grid { grid-template-columns: 1fr 1fr; gap: 32px 24px; } }

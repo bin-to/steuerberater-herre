@@ -22,7 +22,6 @@ Texte und Inhalte in `src/` ändern, dann `node build.js` ausführen. Zum Hosten
 
 ## Vor dem Livegang
 
-- Datenschutzerklärung einsetzen und anpassen (Platzhalter in `src/pages.js`)
-- Haftungs-/Urheberrechtsabschnitte im Impressum ergänzen
+- Impressum, Datenschutz und AGB rechtlich prüfen lassen
 - Leistungslisten auf Privat/Unternehmen inhaltlich prüfen
 - Hosting-Anbieter in der Datenschutzerklärung eintragen

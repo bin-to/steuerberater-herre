@@ -89,6 +89,7 @@ function header(active) {
         <a class="btn" href="index.html#kontakt">Kontakt ${icon.arrow}</a>
     </nav>
   </div>
+  <span class="progress" aria-hidden="true"></span>
 </header>`;
 }
 
@@ -204,8 +205,8 @@ function services() {
         <p>Digital, modern und trotzdem persönlich – maßgeschneidert für Ihren Betrieb.</p>
         <span class="tile__more">Mehr erfahren ${icon.arrow}</span>
       </a>
-      <a class="tile tile--c tile--lime tile--stamp" href="kanzlei.html" data-reveal>
-        <img class="tile__deco" src="${img("stempel.png")}" alt="">
+      <a class="tile tile--c" href="kanzlei.html" data-reveal>
+        <div class="tile__bg"><img src="${img("Slider_Kanzlei_V3-1.jpg")}" alt="" loading="lazy" style="object-position:50% 40%"></div>
         <img class="tile__icon" src="${img("Icons_herre-04.png")}" alt="" width="64" height="64">
         <h3>Kanzlei</h3>
         <p>Lernen Sie uns kennen: ein junges, familiäres Team mit Erfahrung aus der Finanzverwaltung.</p>
@@ -252,7 +253,6 @@ function about({ withLink = true } = {}) {
     <div class="split__media" data-reveal>
       <img src="${img("StephiRalph.jpg")}" alt="Stefanie und Ralph Herre, Kanzleileitung" loading="lazy">
       <p class="split__quote">Wir kennen <strong>beide Seiten</strong> – die der Finanzverwaltung und Ihre.</p>
-      <img class="split__badge" src="${img("stempel.png")}" alt="" loading="lazy">
     </div>
     <div data-reveal style="--d:.1s">
       <p class="eyebrow">Über uns</p>
@@ -335,7 +335,7 @@ function team() {
   <div class="wrap">
     <div class="section-head" data-reveal>
       <p class="eyebrow">Kanzleileitung</p>
-      <h2>Die Köpfe hinter <span class="script">steuerberaterherre</span></h2>
+      <h2>Die Köpfe hinter <span class="hl">steuerberaterherre</span>.</h2>
       <p class="lead">Beide haben jahrelang auf der anderen Seite des Schreibtischs gesessen – in Veranlagung und Betriebsprüfung. Davon profitieren Sie heute.</p>
     </div>
     <div class="team">

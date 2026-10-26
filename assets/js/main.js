@@ -74,9 +74,31 @@
     document.querySelectorAll(".legal__block").forEach((s) => spy.observe(s));
   }
 
-  // Nach oben
+  // Kachel-Spotlight: Mausposition als CSS-Variablen
+  document.querySelectorAll(".tile").forEach((t) => {
+    t.addEventListener("pointermove", (e) => {
+      const r = t.getBoundingClientRect();
+      t.style.setProperty("--mx", `${e.clientX - r.left}px`);
+      t.style.setProperty("--my", `${e.clientY - r.top}px`);
+    });
+  });
+
+  // Scroll: Header-Zustand, Lesefortschritt, Hero-Parallax, Nach-oben-Button
   const top = document.querySelector(".to-top");
-  const onScroll = () => top?.classList.toggle("is-visible", window.scrollY > 800);
+  const progress = document.querySelector(".progress");
+  const heroImg = document.querySelector(".hero__media img");
+  const still = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let ticking = false;
+  const update = () => {
+    const y = window.scrollY;
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    document.body.classList.toggle("is-scrolled", y > 24);
+    progress?.style.setProperty("--p", max > 0 ? (y / max).toFixed(4) : 0);
+    if (heroImg && !still && y < window.innerHeight) heroImg.style.transform = `translate3d(0, ${y * 0.18}px, 0) scale(1.04)`;
+    top?.classList.toggle("is-visible", y > 800);
+    ticking = false;
+  };
+  const onScroll = () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } };
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
   top?.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
